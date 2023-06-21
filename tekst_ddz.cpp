@@ -32,26 +32,36 @@ int main ()
 
     }
     int j=0;
-    for(int i=0; i<t.length();)
+    for(int i=0; i<t.length()+1;)
     {
-        if(w[j]==w[i])
+        if(w[j]==t[i]&&i!=t.length())
         {
             ++j;
             ++i;
         }
-        else
+        else if(i!=t.length())
         {
+            if (j == w.length())
+            {
+                cout << i-j << endl;
+                j = index[j-1];
+            }
+            else
+            {
+                j = index[j-1];
 
-        }
-        if(j==w.length())
-        {
-            cout<<i<<endl;
-            j=index[j]+1;
+            }
         }
         else
         {
-            j=index[j]+1;
+            if (j == w.length())
+            {
+                cout << i-j << endl;
+                j = index[j-1];
+                break;
+            }
         }
+
     }
     return 0;
 }
