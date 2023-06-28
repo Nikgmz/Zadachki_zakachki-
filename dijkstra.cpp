@@ -13,10 +13,6 @@ struct Edge
     }
     Edge(int to, int dist):to(to), dist(dist) {}
 };
-struct Graph
-{
-    int n1, n2, d;
-};
 int main ()
 {
     int n, m;
